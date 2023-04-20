@@ -26,15 +26,15 @@ LEFT JOIN appels_transferts at2 on at2.id_init_appels_groupe_out = ago.id
 		elements: 10372,			
 		communications_details_operator: [			
 			{		
-			id: 4415905,		
-			id_appel: 423426662,		
+			id: 1,		
+			id_appel: 2,		
 			date: "2022-08-01T08:35:28",		
-			service_num: 33934146932,		
-			operator.id: 254987,		
-			operator.name: "Chambellan",		
-			operator.email: "cchambellan@axialys.com",		
-			group.id: 98456,		
-			group.name: "SAV Axialys",		
+			service_num: 33,		
+			operator.id: 25,		
+			operator.name: "tom",		
+			operator.email: "thikari@gihtub.com",		
+			group.id: 123,		
+			group.name: "SA",		
 			waiting_duration: 24,		
 			communication_duration: 587,		
 			on_hold_duration: 18,		
@@ -53,5 +53,10 @@ LEFT JOIN appels_transferts at2 on at2.id_init_appels_groupe_out = ago.id
 2. Build an api to serve this data as describe
 3. Write unit test check if the api data structure is the same as described
 4. Write postman test
+
+# Requirement
+1. Use a type language
+2. use JWT as authentification
+3. use clean code principles
 
 May our code be good :)
