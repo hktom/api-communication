@@ -58,5 +58,6 @@ LEFT JOIN appels_transferts at2 on at2.id_init_appels_groupe_out = ago.id
 1. Use a type language
 2. use JWT as authentification
 3. use clean code principles
+4. respect json type 
 
 May our code be good :)
