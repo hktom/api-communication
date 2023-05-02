@@ -13,6 +13,7 @@ client = TestClient(app)
 class CommunicationEndpointTest(unittest.TestCase): 
 
     def setUp(self) -> None:
+        # setup mock database here
         return super().setUp()
     
     def test_get_communication_details(self): 
@@ -39,7 +40,7 @@ class CommunicationEndpointTest(unittest.TestCase):
             ]
         }
         client.post("/communications", expected_payload)
-        response = client.get("/communications/") 
+        response = client.get("/communications") 
         self.assertEqual(response.status_code, 200) 
         self.assertEqual(response.json(), expected_payload)
 
