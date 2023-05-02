@@ -23,3 +23,10 @@ class OutgroupCall(Base):
     on_hold_duration = Column(Integer) 
     catchup_duration = Column(Integer) 
     post_call_duration = Column(Integer) 
+    ring_duration = Column(Integer)
+
+
+class OutgroupCallDuration(Base): 
+    __tablename__ = 'appels_group_out_durees' 
+    id = Column(Integer, ForeignKey('appels_group_out.id')) 
+    duration = Column(Integer) 
