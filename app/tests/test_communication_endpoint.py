@@ -38,6 +38,7 @@ class CommunicationEndpointTest(unittest.TestCase):
                 }
             ]
         }
+        client.post("/communications", expected_payload)
         response = client.get("/communications/") 
         self.assertEqual(response.status_code, 200) 
         self.assertEqual(response.json(), expected_payload)
