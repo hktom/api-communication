@@ -12,8 +12,13 @@ communications_router = APIRouter()
 def get_current_user() -> User: 
     pass 
 
-@communications_router.get("/communications/{id}", response_model=OutgroupCallSchema) 
+@communications_router.get("/communications/", response_model=OutgroupCallSchema) 
 async def retrieve_communication_details(db: Session = Depends(get_db), current_user=Depends(get_current_user), page : int = Query(1, gt=0), 
                                          per_page : int= Query(10, gt=0, le=100)) -> dict: 
+    
+    offset = (page - 1) * per_page 
+    query2 = select(OutgroupCall)
     query = db.query(OutgroupCall).offset(offset).limit(per_page)
+    communications = query.all()
+    return communications 
     
