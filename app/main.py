@@ -9,7 +9,7 @@ from routes.communications import communications_router
 app = FastAPI() 
 
 # register route 
-app.include_router(communications_router) 
+app.include_router(communications_router, prefix="/communications") 
 
 @app.on_event("startup") 
 def on_startup(): 
