@@ -4,12 +4,12 @@
 
 ```sql
 Select ago.id, ago.id_appel as "id_appel", ago.dt as "date" ,ago.service_num , ago.id_op as "operator.id",  o.realname as "operator.name", o.email as "operator.mail" , ago.id_groupe as "group.id", g.nom as "group.name", ago.duree_sonnerie as "ringing_duration", ago.duree_attente as "waiting_duration" , ago.duree as "communication_duration", agod.about_pause  as "on_hold_duration", agod.catchup as "catchup_duration" , agod.ppa as "post_call_duration", at2.id as "transfer.id"
-from appels_groupe_out ago
+from appels_groupe_out as ago
 INNER  JOIN appels_groupe_out ag on ag.id_client = 176147 and ag.dt > "2023-01-25 00:00:00" and ag.dt < "2023-01-27 23:59:59" and ag.id = ago.id
-INNER JOIN operateurs o on o.id = ago.id_op
-LEFT JOIN groupes g on g.id = ago.id_groupe
-LEFT JOIN appels_groupe_out_durees agod on agod.id_appels_groupe_out = ago.id
-LEFT JOIN appels_transferts at2 on at2.id_init_appels_groupe_out = ago.id
+INNER JOIN operateurs as o on o.id = ago.id_op
+LEFT JOIN groupes g as on g.id = ago.id_groupe
+LEFT JOIN appels_groupe_out_durees agod as on agod.id_appels_groupe_out = ago.id
+LEFT JOIN appels_transferts as at2 on at2.id_init_appels_groupe_out = ago.id
 ```
 
 ## JSON API
